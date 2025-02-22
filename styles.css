@@ -1,39 +1,154 @@
-*{
+/* Reset básico - siempre lo pongo al inicio para eliminar márgenes y padding por defecto 
+   El box-sizing es crucial para que los paddings no afecten el tamaño final */
+   * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+/* Esto centra la card en medio de la pantalla:
+   - flex para control del contenido
+   - justify-content y align-items center para centrado perfecto
+   - height 100vh para que ocupe toda la altura de la pantalla
+   - Importante: siempre poner la fuente en el body para que la hereden todos los elementos */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color:hsl(217, 54%, 11%);
+    background-color: #0c192c;
+    font-family: 'Montserrat', sans-serif;
 }
 
+/* Este es el contenedor principal (la card):
+   - Width fijo de 350px para que no se deforme
+   - Padding para espacio interno
+   - Border-radius para las esquinas redondeadas
+   - Box-shadow para dar ese efecto de elevación */
 main {
-    width: 300px;
-    border: 1px solid black;
-    border-radius: 12px;
+    width: 350px;
+    padding: 24px;
     background-color: #15273f;
-    padding:12px
+    border-radius: 15px;
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
 }
 
-#equilibrium{
-    width: 300px;
-    border-radius: 10px;
+/* La imagen principal:
+   - Width 100% para que se ajuste al contenedor
+   - Border-radius para esquinas redondeadas igual que la card */
+#equilibrium {
+    width: 100%;
+    border-radius: 8px;
 }
+
+/* Contenedor del texto principal:
+   - Margin para separarlo de otros elementos
+   - Importante tener este contenedor para manejar el espaciado */
+.text-content {
+    margin: 20px 0;
+}
+
+/* El título:
+   - Color blanco para que destaque
+   - Font-size específico para que no sea muy grande
+   - Margin-bottom para separarlo del párrafo
+   - Font-weight 600 para que no sea ni muy bold ni muy light */
 h1 {
-    color: #fff;
-
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
 }
 
-footer{
+/* El párrafo descriptivo:
+   - Color más claro que el título
+   - Font-size más pequeño que el título
+   - Line-height para mejor lectura
+   - Font-weight light para que se vea más delicado */
+.description {
+    color: #8bacd9;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 300;
+    margin: 0;
+}
+
+/* Las secciones que contienen los detalles (precio y tiempo):
+   - Display flex para poner elementos en línea
+   - Justify-content space-between para separar los elementos
+   - Clear both para evitar problemas con flotados
+   - Margin para espaciado entre secciones */
+section {
+    display: flex;  
+    margin: 15px 0;
+    padding: 0;
+    align-items: center;
+    justify-content: space-between;
+    clear: both;
+}
+
+/* El ícono de Ethereum:
+   - Vertical-align middle para alinearlo con el texto */
+#eth {
+    vertical-align: middle;
+}
+
+/* El precio en ETH:
+   - Color específico de Ethereum
+   - Padding left para separarlo del ícono */
+#cantidad {
+    color: #0cfefb;
+    font-size: 16px;
+    padding: 0 0 0 8px;
+}
+
+/* El tiempo restante:
+   - Color más suave que el precio
+   - Mismo padding que el precio para consistencia */
+#tiempo {
+    color: #5d7191;
+    font-size: 16px;
+    padding: 0 0 0 8px;
+}
+
+/* El footer con la info del creador:
+   - Display flex para alinear avatar y texto
+   - Border-top para la línea separadora
+   - Padding top para espacio después de la línea */
+footer {
     display: flex;
     align-items: center;
-    border-top: 1px solid:#fff;
+    border-top: 1px solid #2a3c54;
+    padding: 15px 0 0 0;
 }
-#avatar {
-    width: 50px;
 
+/* El avatar del creador:
+   - Width específico para que no sea muy grande
+   - Border-radius 50% para hacerlo circular
+   - Border white para el borde blanco */
+#avatar {
+    width: 30px;
+    margin: 0 15px 0 0;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+}
+
+/* El texto del autor:
+   - Color suave similar al tiempo
+   - Margin 0 para que se alinee bien con el avatar */
+#autor {
+    color: #5a708d;
+    font-size: 15px;
+    margin: 0;
+}
+
+/* El nombre del autor en strong:
+   - Color blanco para que destaque
+   - Font-weight normal para que no sea muy bold
+   - Font-size inherit para que tome el tamaño del texto padre */
+strong {
+    color: #ffffff;
+    font-weight: 400;
+    font-size: inherit;
 }
