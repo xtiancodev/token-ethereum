@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color:hsl(217, 54%, 11%);
+}
+
+main {
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 12px;
+    background-color: #15273f;
+    padding:12px
+}
+
+#equilibrium{
+    width: 300px;
+    border-radius: 10px;
+}
+h1 {
+    color: #fff;
+
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    border-top: 1px solid:#fff;
+}
+#avatar {
+    width: 50px;
+
+}
